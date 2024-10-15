@@ -30,7 +30,7 @@ def comprobar_comando(comando: str) -> bool:
         bool: True si el comando está en la lista de comandos válidos, False en caso contrario.
     """
     comando = input(comando)
-    if comando == [COMANDOS[0:]]:
+    if comando.lower() in COMANDOS:
         return True
     else:
         return False
@@ -55,7 +55,7 @@ def procesar_compra(saldo: float, importe: float) -> float:
         float: El saldo actualizado después de realizar la compra.
     """
     ingreso = input(importe)
-    saldo = saldo - ingreso
+    saldo = saldo - importe
     return saldo
 
 
